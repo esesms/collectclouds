@@ -13,9 +13,9 @@ premium_search_args = load_credentials("~/.twitter_keys.yaml",
 rule = gen_rule_payload("clouds taste like", results_per_call=100) #min 10, max 100 results
 print(rule)
 
-#search
+#search with max_results (maximum number of tweets or counts to return from)
 tweets = collect_results(rule,
-                        max_results=100,
+                        max_results=500,
                         result_stream_args=premium_search_args)
 
 #output
@@ -28,7 +28,7 @@ for tweet in tweets[30:100]: #variable number
     tweet_str += str(tweet.all_text)     
 print(tweet_str)
 
-#write to file
+#write to file in append mode
 file = open("twitter_text.txt", "a")
 file.write(tweet_str)
 #file.write(str((tweets[1]).all_text))
