@@ -24,7 +24,7 @@ tweets = collect_results(rule,
 #convert to string
 tweet_str = ""
 
-for tweet in tweets[30:100]: #variable number
+for tweet in tweets[0:500]: #variable number
     tweet_str += str(tweet.all_text)     
 print(tweet_str)
 
