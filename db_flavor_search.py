@@ -36,7 +36,7 @@ for food in list_of_report:
     #do a replacement of abbreviations with full words for example inst with instant and whl with whole
     #print(words)
     for word in words:
-        if word == "water":
+        if word == "pudding":
             min_perm = 1
             max_perm = 3
             wd_permutations = []
