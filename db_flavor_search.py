@@ -1,6 +1,6 @@
 #Sue Huang
 #03/13/19
-#uses the food python library
+#uses the food python library USDA
 #searches the food library for all descriptions
 #makes them lowercase and word tokenizes them
 

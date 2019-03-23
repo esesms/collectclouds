@@ -40,7 +40,7 @@ for food in list_of_report:
     for word in words:
 
         #if food description contains cottons generate permutations of the description and append to the list
-        if word == "pudding":
+        if word == "pudding" or word == "marshmallow" or word == "cotton" or word == "vanilla":
             min_perm = 1
             max_perm = 3
             wd_permutations = []
@@ -83,6 +83,7 @@ for tw_sentence in tw_sentence_tokens:
 
     #test variable type
     #print(isinstance(tw_sentence, str))
+    #print(type(tw_sentence))
 
     #use https://regex101.com/ for regular expression tests
     #use re.search to find things inside the string and re.match to start at beginning of string
@@ -99,6 +100,7 @@ for tw_sentence in tw_sentence_tokens:
 
     if phrase:
         phrase = phrase.lower()
+        #print(isinstance(phrase, str))
         ph_tokens = word_tokenize(phrase)
         mwe_tokens = mwe_tokenizer.tokenize((phrase).split())
         #print(mwe_tokens)

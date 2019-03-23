@@ -1,6 +1,6 @@
 # Sue Huang
 # 01/04/2019
-# Searches Twitter for "clouds taste like" and compiles results into a text file
+# Searches Twitter for clouds taste and compiles results into a text file
 
 from searchtweets import ResultStream, gen_rule_payload, load_credentials, collect_results
 
@@ -10,7 +10,7 @@ premium_search_args = load_credentials("~/.twitter_keys.yaml",
                                       env_overwrite=False)
 
 #search term
-rule = gen_rule_payload("clouds taste like", results_per_call=100) #min 10, max 100 results
+rule = gen_rule_payload("clouds tastes like", results_per_call=100) #min 10, max 100 results
 print(rule)
 
 #search with max_results (maximum number of tweets or counts to return from)
