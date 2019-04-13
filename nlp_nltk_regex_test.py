@@ -5,7 +5,7 @@
 #runs sentence tokenization on the text file
 #runs regex on the sentences to extract matches
 #runs word tokenization on the matches
-#prints the matches which contain an adjective or noun and then the word 'clouds'
+#prints the sections that contain food words from the database
 
 #INSTALL: https://likegeeks.com/nlp-tutorial-using-python-nltk/
 
