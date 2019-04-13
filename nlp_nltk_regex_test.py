@@ -55,8 +55,8 @@ for food in list_of_report:
 
         #if food description contains certain words generate permutations of the description and append to the list
 
-        #UNCOMMENT BELOW AND CHANGE FOOD HERE TO LIMIT SEARCH IN DATABASE
-        #if word == "peanut" or word == "cotton":
+        #COMMENT OR UNCOMMENT BELOW AND CHANGE FOOD HERE TO LIMIT SEARCH IN DATABASE
+        if word == "peanut" or word == "cotton":
             min_perm = 1
             max_perm = 3
             wd_permutations = []
