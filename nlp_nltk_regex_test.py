@@ -21,7 +21,7 @@ from itertools import permutations #to iterate through lists in permutations and
 import re
 import food
 
-
+#$
 
 file = open("twitter_text.txt", "r")
 #print(file.read())
