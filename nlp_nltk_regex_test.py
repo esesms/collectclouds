@@ -1,6 +1,6 @@
 #Sue Huang
 #03/15/19
-#v2.0
+#v2.1
 #This program:
 #reads text from a text file
 #runs sentence tokenization on the text file
