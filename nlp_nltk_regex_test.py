@@ -24,7 +24,7 @@ import food
 
 
 
-file = open("twitter_text.txt", "r")
+file = open("twitter_text.txt", "r", encoding = "utf-8")
 #print(file.read())
 
 text = file.read()
