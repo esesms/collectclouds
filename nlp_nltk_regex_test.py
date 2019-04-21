@@ -40,7 +40,7 @@ mwe_tokenizer = MWETokenizer(separator=' ')
 stopwords = set(stopwords.words('english'))
 
 #add more words to stopwords list
-stopwords.update(['n', 'na', 'new', 'vit', 'style', 'low', 'sprd', 'it\'s'])
+stopwords.update(['n', 'na', 'new', 'vit', 'style', 'low', 'sprd', 'it\'s', 'dried', 'fungi'])
 
 for food in list_of_report:
     description = food["Description"].lower() #converts everything to lower case
@@ -56,7 +56,7 @@ for food in list_of_report:
         #if food description contains certain words generate permutations of the description and append to the list
 
         #COMMENT OR UNCOMMENT BELOW AND CHANGE FOOD HERE TO LIMIT SEARCH IN DATABASE
-        if word == "peanut" or word == "cotton":
+        if word == "citrus" or word == "cloud":
             min_perm = 1
             max_perm = 3
             wd_permutations = []
