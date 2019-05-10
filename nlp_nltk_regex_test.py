@@ -36,11 +36,14 @@ list_join_wd_permutations = set()
 #make list of mwe tokenizers joined by space
 mwe_tokenizer = MWETokenizer(separator=' ')
 
+#dictionary to count the food words
+counter = dict()
+
 #smallword_list = ['of', 'the', 'and', 'out', 'na', 'vit', 'n']
 stopwords = set(stopwords.words('english'))
 
 #add more words to stopwords list
-stopwords.update(['n', 'na', 'new', 'vit', 'style', 'low', 'sprd', 'it\'s'])
+stopwords.update(['n', 'na', 'new', 'vit', 'style', 'low', 'sprd', 'it\'s', 'dried', 'fungi'])
 
 for food in list_of_report:
     description = food["Description"].lower() #converts everything to lower case
@@ -144,17 +147,25 @@ for tw_sentence in tw_sentence_tokens:
         #print("+")
 
         for mwe_token in mwe_tokens:
-            #print("MWE tokens:")
-            #print(mwe_token)
-            #print(type(mwe_token))
+            # print("MWE tokens:")
+            # print(mwe_token)
+            # print(type(mwe_token))
             for list_join_wd_permutation in list_join_wd_permutations:
-                #print("Join list permutation")
-                #print(list_join_wd_permutation)
-                #print(type(joined_list_wd_permutation))
+                # print("Join list permutation")
+                # print(list_join_wd_permutation)
+                # print(type(joined_list_wd_permutation))
                 if mwe_token == list_join_wd_permutation:
-                #if "turtle" == list_join_wd_permutation:
+                    # if "turtle" == list_join_wd_permutation:
                     print(mwe_tokens)
                     print('---')
+
+                    if not list_join_wd_permutation in counter:
+                        print('Adding to dictionary...')
+                        counter[list_join_wd_permutation] = 1
+                    else:
+                        print('Incrementing the dictionary...')
+                        counter[list_join_wd_permutation] += 1
+                    print("Dictionary is: ", counter)
                     break
         #ph_pos_tokens = nltk.pos_tag(ph_tokens) #list of tuples
         #print(ph_pos_tokens)
