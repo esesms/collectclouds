@@ -8,7 +8,7 @@
 #runs word tokenization on the matches
 #prints the matches which contain an adjective or noun and then the word 'clouds'
 
-#INSTALL: https://likegeeks.com/nlp-tutorial-using-python-nltk/
+#INSTALL: https://likegeegks.com/nlp-tutorial-using-python-nltk/
 
 import nltk
 from nltk.corpus import stopwords
@@ -24,7 +24,7 @@ import food
 
 
 
-file = open("twitter_text.txt", "r")
+file = open("twitter_text.txt", "r", encoding="utf-8")
 #print(file.read())
 
 text = file.read()
