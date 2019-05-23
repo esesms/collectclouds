@@ -116,11 +116,8 @@ for tw_sentence in tw_sentence_tokens:
 
     if phrase:
         phrase = phrase.lower()
-        #print(isinstance(phrase, str))
         ph_tokens = word_tokenize(phrase)
         mwe_tokens = mwe_tokenizer.tokenize((phrase).split())
-        #print(mwe_tokens)
-        #print("+")
 
         for mwe_token in mwe_tokens:
             for list_join_wd_permutation in list_join_wd_permutations:
