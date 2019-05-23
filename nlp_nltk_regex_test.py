@@ -18,6 +18,7 @@ from nltk.corpus import wordnet as wn
 from nltk import pos_tag
 from nltk.tokenize import MWETokenizer
 from itertools import permutations #to iterate through lists in permutations and combinations
+from prettytable import PrettyTable
 
 import re
 import food
@@ -38,6 +39,12 @@ mwe_tokenizer = MWETokenizer(separator=' ')
 
 #dictionary to count the food words
 counter = dict()
+
+#list of dictionaries to count food
+#counter_list = [counter]
+
+#total food count
+total = 0
 
 #smallword_list = ['of', 'the', 'and', 'out', 'na', 'vit', 'n']
 stopwords = set(stopwords.words('english'))
@@ -157,16 +164,46 @@ for tw_sentence in tw_sentence_tokens:
                 if mwe_token == list_join_wd_permutation:
                     # if "turtle" == list_join_wd_permutation:
                     print(mwe_tokens)
-                    print('---')
 
                     if not list_join_wd_permutation in counter:
-                        print('Adding to dictionary...')
+                        print('Adding new food to dictionary...')
                         counter[list_join_wd_permutation] = 1
                     else:
-                        print('Incrementing the dictionary...')
+                        print('Incrementing existing food in dictionary...')
                         counter[list_join_wd_permutation] += 1
                     print("Dictionary is: ", counter)
+                    print('---')
                     break
+#
+
+print("List of all the foods in the dictionary are:")
+
+for food, count in counter.items():
+     print(food + ", " + str(count))
+
+print('---')
+print("Sum total of all the foods in the dictionary is:")
+
+for count in counter.values():
+    total = total + count
+
+print(total)
+
+print('---')
+print("Percentage value of each food in the dictionary is:")
+
+table = PrettyTable(['Food', 'Count', 'Percent'])
+
+for food, count in counter.items():
+     percent = (count/total) * 100
+     #print(food + "\t" + str(count) + "\t" + str(percent))
+     table.add_row([food, str(count), str(percent) + "%"])
+
+table.sortby = "Percent"
+print(table)
+
+
+
         #ph_pos_tokens = nltk.pos_tag(ph_tokens) #list of tuples
         #print(ph_pos_tokens)
         #print(ph_pos_tokens, "\n-")
