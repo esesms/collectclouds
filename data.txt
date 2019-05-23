@@ -1,0 +1,53 @@
++---------------+-------+---------+
+|      Food     | Count | Percent |
++---------------+-------+---------+
+|     sweet     |   13  |  14.29  |
+|  cotton candy |   6   |   6.59  |
+|     candy     |   6   |   6.59  |
+|      silk     |   5   |   5.49  |
+|  strawberries |   3   |   3.3   |
+|  marshmallows |   3   |   3.3   |
+|     cheese    |   3   |   3.3   |
+|    vanilla    |   2   |   2.2   |
+|   sweetened   |   2   |   2.2   |
+|      sun      |   2   |   2.2   |
+|    rainbow    |   2   |   2.2   |
+|     powder    |   2   |   2.2   |
+|    pancake    |   2   |   2.2   |
+|      eggs     |   2   |   2.2   |
+|     crisp     |   2   |   2.2   |
+|    cookies    |   2   |   2.2   |
+|      cake     |   2   |   2.2   |
+|     winter    |   1   |   1.1   |
+|      wine     |   1   |   1.1   |
+|    tropical   |   1   |   1.1   |
+|      tart     |   1   |   1.1   |
+|     summer    |   1   |   1.1   |
+|   spaghetti   |   1   |   1.1   |
+|    potatoes   |   1   |   1.1   |
+|    popcorn    |   1   |   1.1   |
+| peanut butter |   1   |   1.1   |
+|     peanut    |   1   |   1.1   |
+|      mild     |   1   |   1.1   |
+|     mashed    |   1   |   1.1   |
+|     mango     |   1   |   1.1   |
+|    lemonade   |   1   |   1.1   |
+|      kiwi     |   1   |   1.1   |
+|     indian    |   1   |   1.1   |
+|      hot      |   1   |   1.1   |
+|      gin      |   1   |   1.1   |
+|      full     |   1   |   1.1   |
+|     fruits    |   1   |   1.1   |
+|     fruit     |   1   |   1.1   |
+|     fresh     |   1   |   1.1   |
+|     fluffy    |   1   |   1.1   |
+|    filling    |   1   |   1.1   |
+|      dark     |   1   |   1.1   |
+|     creamy    |   1   |   1.1   |
+|     coffee    |   1   |   1.1   |
+|   chocolate   |   1   |   1.1   |
+|  cauliflower  |   1   |   1.1   |
+|     butter    |   1   |   1.1   |
+|      buds     |   1   |   1.1   |
+|     breeze    |   1   |   1.1   |
++---------------+-------+---------+
