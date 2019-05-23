@@ -1,6 +1,6 @@
 #Sue Huang
 #03/15/19
-#v2.1
+#v2.2
 #This program:
 #reads text from a text file
 #runs sentence tokenization on the text file
@@ -17,7 +17,7 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import wordnet as wn
 from nltk import pos_tag
 from nltk.tokenize import MWETokenizer
-from itertools import permutations #to iterate through lists in permutations and combinations
+from itertools import permutations
 from prettytable import PrettyTable
 
 import re
@@ -40,9 +40,6 @@ mwe_tokenizer = MWETokenizer(separator=' ')
 #dictionary to count the food words
 counter = dict()
 
-#list of dictionaries to count food
-#counter_list = [counter]
-
 #total food count
 total = 0
 
@@ -55,10 +52,8 @@ stopwords.update(['n', 'na', 'new', 'vit', 'style', 'low', 'sprd', 'it\'s', 'dri
 for food in list_of_report:
     description = food["Description"].lower() #converts everything to lower case
     tokens = word_tokenize(description)
-    #words = [word for word in tokens if word.isalpha() and word != "of" and word != "the" and word != "out" and word != "na" and word != "vit" and word != "and" and word != "or" and word != "dry" and word != "mix" and word != "reg" and word != "prep" and word != "ckd" and word != "stmd" and word != "inst"] #removes commas
     words = [word for word in tokens if word.isalpha() and word not in stopwords]
-    #do a replacement of abbreviations with full words for example inst with instant and whl with whole
-    #print(words)
+
 
     #iterates through the food descriptions
     for word in words:
@@ -75,12 +70,6 @@ for food in list_of_report:
                     wd_permutations.append(foods)
             #wd_permutations = permutations(words, 2)
             list_wd_permutations = list(wd_permutations)
-            #print(list_wd_permutations)
-
-            # make into multi-word expression and add to mwe_tokenizer list
-
-            #make a list to hold the joined strings of permutated foods
-            #list_join_wd_permutations = list()
 
             #join tuples back together into a string and append them to the new list
             for list_wd_permutation in list_wd_permutations:
@@ -88,17 +77,10 @@ for food in list_of_report:
                 join_wd_permutations = (' '.join(list_wd_permutation))
                 list_join_wd_permutations.add(join_wd_permutations)
 
-                #the number of words in the permutation
-                ##print (len(list_wd_permutation))
-
                 #if the number of words is more than 1, then add it to the list of mwe
                 if (len(list_wd_permutation) > 1):
                     mwe_tokenizer.add_mwe(list_wd_permutation)
 
-
-                #mwe_tokenizer = MWETokenizer(list_wd_permutations, separator=' ')
-                #print(list_join_wd_permutations)
-                #print(type(list_join_wd_permutations))
 
 print("\n+++++++++++\n")
 
@@ -113,24 +95,11 @@ print(mwe_tokenizer._mwes)
 
 print("\n+++++++++++\n")
 
-
-#tokenizes according to words
-#print(word_tokenize(text))
-
 #tokenizes according to sentences
 tw_sentence_tokens = sent_tokenize(text)
-#print(tw_sentence_tokens)
-
-#tests variable typeR
-#print(isinstance(tw_sentence_tokens, list))
 
 #iterates through the sentence tokens
 for tw_sentence in tw_sentence_tokens:
-    #print(tw_sentence, "\n---")
-
-    #test variable type
-    #print(isinstance(tw_sentence, str))
-    #print(type(tw_sentence))
 
     #use https://regex101.com/ for regular expression tests
     #use re.search to find things inside the string and re.match to start at beginning of string
@@ -154,15 +123,8 @@ for tw_sentence in tw_sentence_tokens:
         #print("+")
 
         for mwe_token in mwe_tokens:
-            # print("MWE tokens:")
-            # print(mwe_token)
-            # print(type(mwe_token))
             for list_join_wd_permutation in list_join_wd_permutations:
-                # print("Join list permutation")
-                # print(list_join_wd_permutation)
-                # print(type(joined_list_wd_permutation))
                 if mwe_token == list_join_wd_permutation:
-                    # if "turtle" == list_join_wd_permutation:
                     print(mwe_tokens)
 
                     if not list_join_wd_permutation in counter:
@@ -196,25 +158,7 @@ table = PrettyTable(['Food', 'Count', 'Percent'])
 
 for food, count in counter.items():
      percent = (count/total) * 100
-     #print(food + "\t" + str(count) + "\t" + str(percent))
      table.add_row([food, str(count), str(percent) + "%"])
 
 table.sortby = "Percent"
 print(table)
-
-
-
-        #ph_pos_tokens = nltk.pos_tag(ph_tokens) #list of tuples
-        #print(ph_pos_tokens)
-        #print(ph_pos_tokens, "\n-")
-        #print(type(ph_pos_tokens))
-        #for ph_pos_token in ph_pos_tokens:
-            #print(ph_pos_token, "\n--")
-            #print(type(ph_pos_token)) #tuples
-            #if ph_pos_token[1] == "JJ" or (ph_pos_token[1] == "NN" and ph_pos_token[0] != "clouds"): #tests if word preceding clouds is a noun or adjective
-                #print(ph_pos_tokens, "\n++")
-                #print(ph_tokens, "\n++")
-
-
-    #if(re.search("^c", "tw_sentence")):
-#print(tw_sentence)
