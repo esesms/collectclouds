@@ -47,7 +47,7 @@ total = 0
 stopwords = set(stopwords.words('english'))
 
 #add more words to stopwords list
-stopwords.update(['n', 'na', 'new', 'vit', 'style', 'low', 'sprd', 'it\'s', 'dried', 'fungi'])
+stopwords.update(['n', 'na', 'new', 'vit', 'style', 'low', 'sprd', 'it\'s', 'dried', 'fungi', 'wonder', 'one', 'tongue', 'flavor', 'flavors', 'w', 'always', 'made', 'vegan', 'white', 'good', 'little', 'go', 'eye', 'end', 'delight', 'cloud', 'blue', 'back', 'without', 'warm', 'stuff', 'skin', 'right', 'real', 'past', 'outside', 'next', 'morning', 'hi', 'heart', 'head', 'gold', 'general', 'fr', 'eat', 'drink', 'big', 'baby', 'yogurt', 'way', 'use', 'ultra', 'super', 'sub', 'start', 'soft', 'si', 'shaped', 'power', 'plus', 'part', 'old', 'november', 'mixed', 'meal', 'less', 'late', 'kit', 'game', 'kit', 'friends', 'eight', 'dog', 'deep', 'de', 'combination', 'blends', 'bear', 'animal', 'add'])
 
 for food in list_of_report:
     description = food["Description"].lower() #converts everything to lower case
@@ -61,7 +61,7 @@ for food in list_of_report:
         #if food description contains certain words generate permutations of the description and append to the list
 
         #COMMENT OR UNCOMMENT BELOW AND CHANGE FOOD HERE TO LIMIT SEARCH IN DATABASE
-        if word == "peanut" or word == "cotton":
+        #if word == "peanut" or word == "cotton":
             min_perm = 1
             max_perm = 3
             wd_permutations = []
@@ -155,7 +155,12 @@ table = PrettyTable(['Food', 'Count', 'Percent'])
 
 for food, count in counter.items():
      percent = (count/total) * 100
-     table.add_row([food, str(count), str(percent) + "%"])
+     percent = round(percent, 2)
+     table.add_row([food, count, percent])
 
 table.sortby = "Percent"
+table.reversesort = True
 print(table)
+
+with open('data.txt', 'w') as w:
+    w.write(str(table))
