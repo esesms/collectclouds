@@ -25,7 +25,7 @@ import food
 
 
 
-file = open("twitter_text.txt", "r", encoding="utf-8")
+file = open("twitter_text2.txt", "r", encoding="utf-8")
 #print(file.read())
 
 text = file.read()
@@ -47,7 +47,7 @@ total = 0
 stopwords = set(stopwords.words('english'))
 
 #add more words to stopwords list
-stopwords.update(['n', 'na', 'new', 'vit', 'style', 'low', 'sprd', 'it\'s', 'dried', 'fungi', 'wonder', 'one', 'tongue', 'flavor', 'flavors', 'w', 'always', 'made', 'vegan', 'white', 'good', 'little', 'go', 'eye', 'end', 'delight', 'cloud', 'blue', 'back', 'without', 'warm', 'stuff', 'skin', 'right', 'real', 'past', 'outside', 'next', 'morning', 'hi', 'heart', 'head', 'gold', 'general', 'fr', 'eat', 'drink', 'big', 'baby', 'yogurt', 'way', 'use', 'ultra', 'super', 'sub', 'start', 'soft', 'si', 'shaped', 'power', 'plus', 'part', 'old', 'november', 'mixed', 'meal', 'less', 'late', 'kit', 'game', 'kit', 'friends', 'eight', 'dog', 'deep', 'de', 'combination', 'blends', 'bear', 'animal', 'add'])
+stopwords.update(['n', 'na', 'new', 'vit', 'style', 'low', 'sprd', 'it\'s', 'dried', 'fungi', 'wonder', 'one', 'tongue', 'flavor', 'flavors', 'w', 'always', 'made', 'vegan', 'white', 'good', 'little', 'go', 'eye', 'end', 'delight', 'cloud', 'blue', 'back', 'without', 'warm', 'stuff', 'skin', 'right', 'real', 'past', 'outside', 'next', 'morning', 'hi', 'heart', 'head', 'gold', 'general', 'fr', 'eat', 'drink', 'big', 'baby', 'yogurt', 'way', 'use', 'ultra', 'super', 'sub', 'start', 'soft', 'si', 'shaped', 'power', 'plus', 'part', 'old', 'november', 'mixed', 'meal', 'less', 'late', 'kit', 'game', 'kit', 'friends', 'eight', 'dog', 'deep', 'de', 'combination', 'blends', 'bear', 'animal', 'add', 'ear', 'kid', 'boy', 'oh', 'top', 'tree', 'side', 'shapes', 'prior', 'neck', 'mix', 'french', 'food', 'balls', 'young', 'wld', 'wash', 'user', 'types', 'type', 'store', 'southern', 'smart', 'slices', 'pods', 'plate', 'party', 'ones', 'lunch', 'leg', 'label', 'jo', 'item', 'inch', 'iced', 'higher', 'half', 'giant', 'g', 'foods', 'filling', 'filled', 'family', 'eyes', 'es', 'energy', 'dove', 'dogs', 'cup', 'cubes', 'cooking', 'child', 'christmas', 'character', 'ch', 'box', 'bowl', 'boo', 'black', 'bite', 'bar', 'b', 'arizona'])
 
 for food in list_of_report:
     description = food["Description"].lower() #converts everything to lower case
@@ -105,8 +105,14 @@ for tw_sentence in tw_sentence_tokens:
     #use re.search to find things inside the string and re.match to start at beginning of string
 
     #food = "cotton candy"
-    #regex to match whole phrases up to period boundaries that contain near terms taste(s) and cloud(sd)
+
+    #different regexes
+
+    #broad search: regex to match whole phrases up to period boundaries that contain near terms taste(s) and cloud(sd)
     match = re.search(r"[^\.\!\?\n]*(?:[Tt]aste.?\W+(?:\w+\W+){0,4}?[Cc]loud.?|[Cc]loud.?\W+(?:\w+\W+){0,4}?[Tt]aste.?)[^\.\!\?\n]*", tw_sentence) #only output sentences that have the phrase clouds taste like <food from database>
+
+    #basic search: searches for food words within tw_sentence
+    #match = re.search(r"[Cc]loud.?\W+(?:\w+\W+){0,4}?[Tt]aste.?(?:\w+\W+){0,4}?[Ll]ike[^.](?:\w+\W+)[^.]*", tw_sentence)
 
     #exception handling
     try:
@@ -162,5 +168,5 @@ table.sortby = "Percent"
 table.reversesort = True
 print(table)
 
-with open('data.txt', 'w') as w:
+with open('data_broad_search.txt', 'w') as w:
     w.write(str(table))

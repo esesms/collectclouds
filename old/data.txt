@@ -1,0 +1,430 @@
++------------------+-------+---------+
+|       Food       | Count | Percent |
++------------------+-------+---------+
+|   cotton candy   |  345  |  17.21  |
+|      cotton      |   64  |   3.19  |
+|   marshmallows   |   59  |   2.94  |
+|      candy       |   51  |   2.54  |
+|      water       |   50  |   2.49  |
+|      fluffy      |   49  |   2.44  |
+|      sweet       |   36  |   1.8   |
+|       top        |   34  |   1.7   |
+|     cocktail     |   34  |   1.7   |
+|     vanilla      |   32  |   1.6   |
+|      light       |   28  |   1.4   |
+|     rainbow      |   22  |   1.1   |
+|     healthy      |   22  |   1.1   |
+|       milk       |   21  |   1.05  |
+|       fat        |   20  |   1.0   |
+|     potatoes     |   19  |   0.95  |
+|    chocolate     |   19  |   0.95  |
+|      treats      |   18  |   0.9   |
+|    strawberry    |   18  |   0.9   |
+|      snacks      |   18  |   0.9   |
+|  rice krispies   |   18  |   0.9   |
+|      mashed      |   18  |   0.9   |
+|     pancakes     |   17  |   0.85  |
+|       kid        |   17  |   0.85  |
+|      sugar       |   15  |   0.75  |
+|    ice cream     |   15  |   0.75  |
+|      touch       |   14  |   0.7   |
+|       pink       |   14  |   0.7   |
+|       food       |   13  |   0.65  |
+|     cookies      |   13  |   0.65  |
+|       well       |   12  |   0.6   |
+|       long       |   11  |   0.55  |
+|       life       |   11  |   0.55  |
+|     sunshine     |   10  |   0.5   |
+|      cream       |   10  |   0.5   |
+|      coffee      |   10  |   0.5   |
+|       cake       |   10  |   0.5   |
+|     frosting     |   9   |   0.45  |
+|     chicken      |   9   |   0.45  |
+|     whipped      |   8   |   0.4   |
+|   sponge cake    |   8   |   0.4   |
+|      fresh       |   8   |   0.4   |
+|       cool       |   8   |   0.4   |
+|       cold       |   8   |   0.4   |
+|      wings       |   7   |   0.35  |
+|       tea        |   7   |   0.35  |
+|      smart       |   7   |   0.35  |
+|      great       |   7   |   0.35  |
+|      fruit       |   7   |   0.35  |
+|       feet       |   7   |   0.35  |
+|       eggs       |   7   |   0.35  |
+|     cupcakes     |   7   |   0.35  |
+|      bread       |   7   |   0.35  |
+|       whip       |   6   |   0.3   |
+|       weed       |   6   |   0.3   |
+|       tofu       |   6   |   0.3   |
+|      sprite      |   6   |   0.3   |
+|       roll       |   6   |   0.3   |
+|    raspberry     |   6   |   0.3   |
+|       hot        |   6   |   0.3   |
+|      honey       |   6   |   0.3   |
+|      higher      |   6   |   0.3   |
+|     covered      |   6   |   0.3   |
+|      cakes       |   6   |   0.3   |
+|      butter      |   6   |   0.3   |
+|       box        |   6   |   0.3   |
+|     biscuits     |   6   |   0.3   |
+|       year       |   5   |   0.25  |
+|  whipped cream   |   5   |   0.25  |
+|     waffles      |   5   |   0.25  |
+|      spread      |   5   |   0.25  |
+|       side       |   5   |   0.25  |
+|        oh        |   5   |   0.25  |
+|       mini       |   5   |   0.25  |
+|       ice        |   5   |   0.25  |
+|   butterscotch   |   5   |   0.25  |
+|      banana      |   5   |   0.25  |
+|      types       |   4   |   0.2   |
+|      summer      |   4   |   0.2   |
+|   strawberries   |   4   |   0.2   |
+|     straight     |   4   |   0.2   |
+|       sea        |   4   |   0.2   |
+|       rum        |   4   |   0.2   |
+|      rolled      |   4   |   0.2   |
+|       meat       |   4   |   0.2   |
+|       mash       |   4   |   0.2   |
+|     lemonade     |   4   |   0.2   |
+|       home       |   4   |   0.2   |
+|      ground      |   4   |   0.2   |
+|      green       |   4   |   0.2   |
+|      grape       |   4   |   0.2   |
+|      golden      |   4   |   0.2   |
+|      french      |   4   |   0.2   |
+|       dark       |   4   |   0.2   |
+|       cup        |   4   |   0.2   |
+|      cheese      |   4   |   0.2   |
+|   bran flakes    |   4   |   0.2   |
+|      syrup       |   3   |   0.15  |
+|      stars       |   3   |   0.15  |
+|      spicy       |   3   |   0.15  |
+|       soup       |   3   |   0.15  |
+|     skittles     |   3   |   0.15  |
+|       salt       |   3   |   0.15  |
+|       rose       |   3   |   0.15  |
+|       rice       |   3   |   0.15  |
+|       red        |   3   |   0.15  |
+|     pumpkin      |   3   |   0.15  |
+|      powder      |   3   |   0.15  |
+|  peanut butter   |   3   |   0.15  |
+|       ones       |   3   |   0.15  |
+|      moose       |   3   |   0.15  |
+|     lobster      |   3   |   0.15  |
+|       joy        |   3   |   0.15  |
+|     japanese     |   3   |   0.15  |
+|      giant       |   3   |   0.15  |
+|      fried       |   3   |   0.15  |
+|    dumplings     |   3   |   0.15  |
+|    doughnuts     |   3   |   0.15  |
+|     coconut      |   3   |   0.15  |
+|      child       |   3   |   0.15  |
+|    cheesecake    |   3   |   0.15  |
+|     caramel      |   3   |   0.15  |
+|     candies      |   3   |   0.15  |
+|     buttery      |   3   |   0.15  |
+|      burger      |   3   |   0.15  |
+|       bit        |   3   |   0.15  |
+|      balls       |   3   |   0.15  |
+|      almond      |   3   |   0.15  |
+|      yellow      |   2   |   0.1   |
+|     wrapped      |   2   |   0.1   |
+|     wedding      |   2   |   0.1   |
+|   vanilla ice    |   2   |   0.1   |
+|       type       |   2   |   0.1   |
+|    tortillas     |   2   |   0.1   |
+|      thick       |   2   |   0.1   |
+|       sun        |   2   |   0.1   |
+|  sugar cookies   |   2   |   0.1   |
+|     stomach      |   2   |   0.1   |
+|       star       |   2   |   0.1   |
+|      spring      |   2   |   0.1   |
+|       soy        |   2   |   0.1   |
+|    sour cream    |   2   |   0.1   |
+|      smooth      |   2   |   0.1   |
+|      slice       |   2   |   0.1   |
+|      shapes      |   2   |   0.1   |
+|    root beer     |   2   |   0.1   |
+|      rolls       |   2   |   0.1   |
+|     roasted      |   2   |   0.1   |
+|      roast       |   2   |   0.1   |
+|        rl        |   2   |   0.1   |
+|    restaurant    |   2   |   0.1   |
+|      recipe      |   2   |   0.1   |
+|   raspberries    |   2   |   0.1   |
+|        r         |   2   |   0.1   |
+|      quinoa      |   2   |   0.1   |
+|      quick       |   2   |   0.1   |
+|      purple      |   2   |   0.1   |
+|     pudding      |   2   |   0.1   |
+|      prior       |   2   |   0.1   |
+|     pockets      |   2   |   0.1   |
+|      pizza       |   2   |   0.1   |
+|       pie        |   2   |   0.1   |
+|    peppermint    |   2   |   0.1   |
+|       peas       |   2   |   0.1   |
+|      peanut      |   2   |   0.1   |
+|     peaches      |   2   |   0.1   |
+|      ocean       |   2   |   0.1   |
+|       neck       |   2   |   0.1   |
+|       mix        |   2   |   0.1   |
+|       mint       |   2   |   0.1   |
+|     mineral      |   2   |   0.1   |
+|    meatballs     |   2   |   0.1   |
+|      maple       |   2   |   0.1   |
+|      mangos      |   2   |   0.1   |
+|      lucky       |   2   |   0.1   |
+|      liquid      |   2   |   0.1   |
+|      lemon       |   2   |   0.1   |
+|       leg        |   2   |   0.1   |
+|       kale       |   2   |   0.1   |
+|       jar        |   2   |   0.1   |
+|       inch       |   2   |   0.1   |
+|      icing       |   2   |   0.1   |
+|       iced       |   2   |   0.1   |
+|     homemade     |   2   |   0.1   |
+|     hawaiian     |   2   |   0.1   |
+|       hard       |   2   |   0.1   |
+|      guava       |   2   |   0.1   |
+|      grits       |   2   |   0.1   |
+|      glazed      |   2   |   0.1   |
+|       fun        |   2   |   0.1   |
+|       full       |   2   |   0.1   |
+|       form       |   2   |   0.1   |
+|      flakes      |   2   |   0.1   |
+|     filling      |   2   |   0.1   |
+|       eyes       |   2   |   0.1   |
+|      eggnog      |   2   |   0.1   |
+|       egg        |   2   |   0.1   |
+|      edible      |   2   |   0.1   |
+|       dry        |   2   |   0.1   |
+|     drinking     |   2   |   0.1   |
+|      double      |   2   |   0.1   |
+|     dessert      |   2   |   0.1   |
+|       cups       |   2   |   0.1   |
+|      crispy      |   2   |   0.1   |
+|     cinnamon     |   2   |   0.1   |
+|  chocolate milk  |   2   |   0.1   |
+|      cherry      |   2   |   0.1   |
+|     cake mix     |   2   |   0.1   |
+|       buns       |   2   |   0.1   |
+|     brownies     |   2   |   0.1   |
+|     brownie      |   2   |   0.1   |
+|      bright      |   2   |   0.1   |
+|   blueberries    |   2   |   0.1   |
+|      blood       |   2   |   0.1   |
+|      batter      |   2   |   0.1   |
+|      bamboo      |   2   |   0.1   |
+|      baking      |   2   |   0.1   |
+|        b         |   2   |   0.1   |
+|      apples      |   2   |   0.1   |
+|    adventure     |   2   |   0.1   |
+|      young       |   1   |   0.05  |
+|       york       |   1   |   0.05  |
+|        x         |   1   |   0.05  |
+|      women       |   1   |   0.05  |
+|      winter      |   1   |   0.05  |
+|       wine       |   1   |   0.05  |
+|      whole       |   1   |   0.05  |
+|     whiskey      |   1   |   0.05  |
+|      whale       |   1   |   0.05  |
+|    well water    |   1   |   0.05  |
+|       wash       |   1   |   0.05  |
+|      wasabi      |   1   |   0.05  |
+|      vodka       |   1   |   0.05  |
+|     vitamin      |   1   |   0.05  |
+|     vinegar      |   1   |   0.05  |
+|     turnips      |   1   |   0.05  |
+|       tuna       |   1   |   0.05  |
+|     truffle      |   1   |   0.05  |
+|     tortilla     |   1   |   0.05  |
+|     teriyaki     |   1   |   0.05  |
+|       tap        |   1   |   0.05  |
+|    tangerine     |   1   |   0.05  |
+|   sweet rolls    |   1   |   0.05  |
+|      sundae      |   1   |   0.05  |
+|     stuffed      |   1   |   0.05  |
+|     strength     |   1   |   0.05  |
+| strawberry sugar |   1   |   0.05  |
+|      straw       |   1   |   0.05  |
+|      stone       |   1   |   0.05  |
+|      squash      |   1   |   0.05  |
+|   spring water   |   1   |   0.05  |
+|     spinach      |   1   |   0.05  |
+|    sour ones     |   1   |   0.05  |
+|       sour       |   1   |   0.05  |
+|       sole       |   1   |   0.05  |
+|      smoked      |   1   |   0.05  |
+|       slip       |   1   |   0.05  |
+|      slices      |   1   |   0.05  |
+|      silver      |   1   |   0.05  |
+|       silk       |   1   |   0.05  |
+|      shrimp      |   1   |   0.05  |
+|      sheep       |   1   |   0.05  |
+|      shakes      |   1   |   0.05  |
+|     serving      |   1   |   0.05  |
+|      seeds       |   1   |   0.05  |
+|  scrambled egg   |   1   |   0.05  |
+|      savory      |   1   |   0.05  |
+|      sauce       |   1   |   0.05  |
+|    sandwiches    |   1   |   0.05  |
+|     sandwich     |   1   |   0.05  |
+|     saltines     |   1   |   0.05  |
+|       ross       |   1   |   0.05  |
+|     ricotta      |   1   |   0.05  |
+|   red potatoes   |   1   |   0.05  |
+|    red pepper    |   1   |   0.05  |
+|      ready       |   1   |   0.05  |
+|     ravioli      |   1   |   0.05  |
+|     quarters     |   1   |   0.05  |
+|  pumpkin spice   |   1   |   0.05  |
+|   pumpkin pie    |   1   |   0.05  |
+|      puffed      |   1   |   0.05  |
+|      pound       |   1   |   0.05  |
+|   potato salad   |   1   |   0.05  |
+|      potato      |   1   |   0.05  |
+|       post       |   1   |   0.05  |
+|     popeyes      |   1   |   0.05  |
+|     popcorn      |   1   |   0.05  |
+|       pop        |   1   |   0.05  |
+|        pm        |   1   |   0.05  |
+|      plate       |   1   |   0.05  |
+|       pina       |   1   |   0.05  |
+|      pillow      |   1   |   0.05  |
+|      pieces      |   1   |   0.05  |
+|     pickles      |   1   |   0.05  |
+|      peach       |   1   |   0.05  |
+|      party       |   1   |   0.05  |
+|     packets      |   1   |   0.05  |
+|   oyster sauce   |   1   |   0.05  |
+|      oscar       |   1   |   0.05  |
+|     original     |   1   |   0.05  |
+|     organic      |   1   |   0.05  |
+|     oranges      |   1   |   0.05  |
+|   orange juice   |   1   |   0.05  |
+|      olive       |   1   |   0.05  |
+|       oil        |   1   |   0.05  |
+|       oat        |   1   |   0.05  |
+|       nut        |   1   |   0.05  |
+|     nuggets      |   1   |   0.05  |
+|      noodle      |   1   |   0.05  |
+|       non        |   1   |   0.05  |
+|      nestle      |   1   |   0.05  |
+|      necks       |   1   |   0.05  |
+|     mushroom     |   1   |   0.05  |
+|     muffins      |   1   |   0.05  |
+|        mt        |   1   |   0.05  |
+|        mr        |   1   |   0.05  |
+|     mountain     |   1   |   0.05  |
+|     mixture      |   1   |   0.05  |
+|      mints       |   1   |   0.05  |
+|      melon       |   1   |   0.05  |
+|  mediterranean   |   1   |   0.05  |
+|    mcgriddles    |   1   |   0.05  |
+|  mashed potato   |   1   |   0.05  |
+|    marmalade     |   1   |   0.05  |
+|    macaroons     |   1   |   0.05  |
+|      lunch       |   1   |   0.05  |
+|     limeade      |   1   |   0.05  |
+|      lemons      |   1   |   0.05  |
+|       lamb       |   1   |   0.05  |
+|       jus        |   1   |   0.05  |
+|      juice       |   1   |   0.05  |
+|        jo        |   1   |   0.05  |
+|       item       |   1   |   0.05  |
+|      inside      |   1   |   0.05  |
+|     includes     |   1   |   0.05  |
+|    imitation     |   1   |   0.05  |
+|    hot fudge     |   1   |   0.05  |
+|    honeycomb     |   1   |   0.05  |
+|      heath       |   1   |   0.05  |
+|     hazelnut     |   1   |   0.05  |
+|       hand       |   1   |   0.05  |
+|       half       |   1   |   0.05  |
+|      gumbo       |   1   |   0.05  |
+|       gum        |   1   |   0.05  |
+|     grilled      |   1   |   0.05  |
+|      grill       |   1   |   0.05  |
+|      greens      |   1   |   0.05  |
+|   granola bar    |   1   |   0.05  |
+|     goddess      |   1   |   0.05  |
+|   goat cheese    |   1   |   0.05  |
+|       gin        |   1   |   0.05  |
+|      garlic      |   1   |   0.05  |
+|        g         |   1   |   0.05  |
+|      fudge       |   1   |   0.05  |
+|      fruity      |   1   |   0.05  |
+|   fruit punch    |   1   |   0.05  |
+|     frosted      |   1   |   0.05  |
+|      fries       |   1   |   0.05  |
+|      flour       |   1   |   0.05  |
+|       fish       |   1   |   0.05  |
+|       fan        |   1   |   0.05  |
+|      family      |   1   |   0.05  |
+|     espresso     |   1   |   0.05  |
+|      drops       |   1   |   0.05  |
+|   drop cookies   |   1   |   0.05  |
+|       drop       |   1   |   0.05  |
+|       done       |   1   |   0.05  |
+|      dinner      |   1   |   0.05  |
+|       cut        |   1   |   0.05  |
+|     cuisine      |   1   |   0.05  |
+|     crushed      |   1   |   0.05  |
+|      crunch      |   1   |   0.05  |
+|      crisp       |   1   |   0.05  |
+|   cream puffs    |   1   |   0.05  |
+|   cream cheese   |   1   |   0.05  |
+|   corn flakes    |   1   |   0.05  |
+|      cookie      |   1   |   0.05  |
+|   cooked pork    |   1   |   0.05  |
+|      cones       |   1   |   0.05  |
+|      colada      |   1   |   0.05  |
+|   coconut oil    |   1   |   0.05  |
+|      citrus      |   1   |   0.05  |
+|      chips       |   1   |   0.05  |
+|     chinese      |   1   |   0.05  |
+|      chick       |   1   |   0.05  |
+|      chewy       |   1   |   0.05  |
+|      chews       |   1   |   0.05  |
+|     chewing      |   1   |   0.05  |
+|     cherries     |   1   |   0.05  |
+|      cheesy      |   1   |   0.05  |
+|      charms      |   1   |   0.05  |
+|        ch        |   1   |   0.05  |
+|      cereal      |   1   |   0.05  |
+|   cauliflower    |   1   |   0.05  |
+|       butt       |   1   |   0.05  |
+|     burrito      |   1   |   0.05  |
+|       bun        |   1   |   0.05  |
+|       buds       |   1   |   0.05  |
+|       bud        |   1   |   0.05  |
+|      brisk       |   1   |   0.05  |
+|       brie       |   1   |   0.05  |
+|      breeze      |   1   |   0.05  |
+|    breakfast     |   1   |   0.05  |
+|      break       |   1   |   0.05  |
+|      brands      |   1   |   0.05  |
+|       boy        |   1   |   0.05  |
+|       bowl       |   1   |   0.05  |
+|       boil       |   1   |   0.05  |
+|    blueberry     |   1   |   0.05  |
+|      bliss       |   1   |   0.05  |
+|      black       |   1   |   0.05  |
+|      bites       |   1   |   0.05  |
+|       bite       |   1   |   0.05  |
+|     berries      |   1   |   0.05  |
+|       beer       |   1   |   0.05  |
+|   beef patties   |   1   |   0.05  |
+|      beach       |   1   |   0.05  |
+|       bbq        |   1   |   0.05  |
+|       base       |   1   |   0.05  |
+|      bakery      |   1   |   0.05  |
+|     avocados     |   1   |   0.05  |
+|   apple juice    |   1   |   0.05  |
+|      apple       |   1   |   0.05  |
+|     almonds      |   1   |   0.05  |
+|    alcoholic     |   1   |   0.05  |
+|       acid       |   1   |   0.05  |
++------------------+-------+---------+
