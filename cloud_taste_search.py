@@ -22,8 +22,7 @@ from prettytable import PrettyTable
 
 import re
 import food
-
-
+import inflect
 
 file = open("twitter_text2.txt", "r", encoding="utf-8")
 #print(file.read())
@@ -47,7 +46,10 @@ total = 0
 stopwords = set(stopwords.words('english'))
 
 #add more words to stopwords list
-stopwords.update(['n', 'na', 'new', 'vit', 'style', 'low', 'sprd', 'it\'s', 'dried', 'fungi', 'wonder', 'one', 'tongue', 'flavor', 'flavors', 'w', 'always', 'made', 'vegan', 'white', 'good', 'little', 'go', 'eye', 'end', 'delight', 'cloud', 'blue', 'back', 'without', 'warm', 'stuff', 'skin', 'right', 'real', 'past', 'outside', 'next', 'morning', 'hi', 'heart', 'head', 'gold', 'general', 'fr', 'eat', 'drink', 'big', 'baby', 'yogurt', 'way', 'use', 'ultra', 'super', 'sub', 'start', 'soft', 'si', 'shaped', 'power', 'plus', 'part', 'old', 'november', 'mixed', 'meal', 'less', 'late', 'kit', 'game', 'kit', 'friends', 'eight', 'dog', 'deep', 'de', 'combination', 'blends', 'bear', 'animal', 'add', 'ear', 'kid', 'boy', 'oh', 'top', 'tree', 'side', 'shapes', 'prior', 'neck', 'mix', 'french', 'food', 'balls', 'young', 'wld', 'wash', 'user', 'types', 'type', 'store', 'southern', 'smart', 'slices', 'pods', 'plate', 'party', 'ones', 'lunch', 'leg', 'label', 'jo', 'item', 'inch', 'iced', 'higher', 'half', 'giant', 'g', 'foods', 'filling', 'filled', 'family', 'eyes', 'es', 'energy', 'dove', 'dogs', 'cup', 'cubes', 'cooking', 'child', 'christmas', 'character', 'ch', 'box', 'bowl', 'boo', 'black', 'bite', 'bar', 'b', 'arizona'])
+stopwords.update(['n', 'na', 'new', 'vit', 'style', 'low', 'sprd', 'it\'s', 'dried', 'fungi', 'wonder', 'one', 'tongue', 'flavor', 'flavors', 'w', 'always', 'made', 'vegan', 'white', 'good', 'little', 'go', 'eye', 'end', 'delight', 'cloud', 'blue', 'back', 'without', 'warm', 'stuff', 'skin', 'right', 'real', 'past', 'outside', 'next', 'morning', 'hi', 'heart', 'head', 'gold', 'general', 'fr', 'eat', 'drink', 'big', 'baby', 'way', 'use', 'ultra', 'super', 'sub', 'start', 'soft', 'si', 'shaped', 'power', 'plus', 'part', 'old', 'november', 'mixed', 'meal', 'less', 'late', 'kit', 'game', 'kit', 'friends', 'eight', 'dog', 'deep', 'de', 'combination', 'blends', 'bear', 'animal', 'add', 'ear', 'kid', 'boy', 'oh', 'top', 'tree', 'side', 'shapes', 'prior', 'neck', 'mix', 'french', 'food', 'balls', 'young', 'wld', 'wash', 'user', 'types', 'type', 'store', 'southern', 'smart', 'slices', 'pods', 'plate', 'party', 'ones', 'lunch', 'leg', 'label', 'jo', 'item', 'inch', 'iced', 'higher', 'half', 'giant', 'g', 'foods', 'filling', 'filled', 'family', 'eyes', 'es', 'energy', 'dove', 'dogs', 'cup', 'cubes', 'cooking', 'child', 'christmas', 'character', 'ch', 'box', 'bowl', 'boo', 'black', 'bite', 'bar', 'b', 'arizona', 'rl', 'r', 'butt', 'mr', 'mt', 'pm', 'post', 'ross', 'x', 'touch', 'well', 'life', 'long', 'great', 'covered', 'year', 'spread', 'mini', 'straight', 'feet', 'weed', 'sea', 'sweet', 'fluffy', 'healthy', 'treats', 'light', 'snacks', 'fat', 'pink', 'cool', 'sunshine', 'rainbow', 'rolled', 'louis', 'sun', 'ground', 'mixture', 'home', 'full', 'summer', 'stars', 'star', 'recipe', 'la', 'ocean', 'hawaiian', 'chick', 'bright', 'blood', 'bit', 'bamboo', 'yellow', 'wrapped', 'women', 'winter', 'whole', 'vitamin', 'thick', 'smoked', 'slip', 'slice', 'silver', 'silk', 'serving', 'seeded', 'savory', 'restaurant', 'red', 'quick', 'quarters', 'proof', 'pound', 'popeyes', 'pockets', 'pillow', 'oscar', 'original', 'non', 'necks', 'moist', 'mediterranean', 'japanese', 'inside', 'includes', 'heat', 'hand', 'green', 'fun', 'form', 'done', 'art', 'adventure','break','beach','base','balance', 'brisk', 'baking'])
+
+#stopwords below that are words part of multi word foods, stops only the individual words, not the multi word
+stopwords2 = ['mashed', 'mash', 'colada', 'hot', 'whipped', 'whip', 'cold', 'fresh', 'vanilla ice', 'purple', 'moose', 'fried', 'edible', 'roll', 'rolls', 'wedding', 'soy', 'peanut', 'pop', 'homemade', 'blueberry', 'almond', 'vegetable', 'tap', 'tuna', 'sugared', 'straw', 'stone', 'spring', 'shake', 'sauce', 'rose', 'roasted', 'ricotta', 'puffed', 'powdered', 'pina', 'olive', 'oil', 'oat', 'mineral', 'maple', 'liquid', 'joy', 'grilled', 'greens', 'golden', 'goddess', 'glazed', 'frosted', 'fiji', 'dry', 'drop', 'double', 'dinner', 'desser', 'dark', 'cut', 'crunchy', 'crunch', 'crisp', 'chinese', 'chews', 'cheesy', 'buttery', 'bright', 'brand', 'bliss', 'apple', 'alcoholic','wasabi', 'cotton', 'lucky', 'seeds', 'flakes', 'tropical','chicken','drops', 'buds', 'bud', 'bakery', 'bites', 'cliff', 'coconut cotton', 'breakfast']
 
 for food in list_of_report:
     description = food["Description"].lower() #converts everything to lower case
@@ -109,10 +111,13 @@ for tw_sentence in tw_sentence_tokens:
     #different regexes
 
     #broad search: regex to match whole phrases up to period boundaries that contain near terms taste(s) and cloud(sd)
-    match = re.search(r"[^\.\!\?\n]*(?:[Tt]aste.?\W+(?:\w+\W+){0,4}?[Cc]loud.?|[Cc]loud.?\W+(?:\w+\W+){0,4}?[Tt]aste.?)[^\.\!\?\n]*", tw_sentence) #only output sentences that have the phrase clouds taste like <food from database>
+    #match = re.search(r"[^\.\!\?\n]*(?:[Tt]aste.?\W+(?:\w+\W+){0,4}?[Cc]loud.?|[Cc]loud.?\W+(?:\w+\W+){0,4}?[Tt]aste.?)[^\.\!\?\n]*", tw_sentence) #only output sentences that have the phrase clouds taste like <food from database>
 
     #basic search: searches for food words within tw_sentence
     #match = re.search(r"[Cc]loud.?\W+(?:\w+\W+){0,4}?[Tt]aste.?(?:\w+\W+){0,4}?[Ll]ike[^.](?:\w+\W+)[^.]*", tw_sentence)
+
+    # basic2 search: searches for food words within tw_sentence in two directions
+    match = re.search(r"[^\.\!\?\n]*(?:[Tt]aste.?\W+(?:\w+\W+){0,2}?[Ll]ike[\s][Cc]loud.?|[Cc]loud.?\W+(?:\w+\W+){0,2}?[Tt]aste.?\W+(?:\w+\W+){0,2}?[Ll]ike.?\W+(?:\w+\W+))[^\.\!\?\n]*", tw_sentence) #only output sentences that have the phrase clouds taste like <food from database>
 
     #exception handling
     try:
@@ -132,6 +137,7 @@ for tw_sentence in tw_sentence_tokens:
 
                     if not list_join_wd_permutation in counter:
                         print('Adding new food to dictionary...')
+
                         counter[list_join_wd_permutation] = 1
                     else:
                         print('Incrementing existing food in dictionary...')
@@ -139,7 +145,37 @@ for tw_sentence in tw_sentence_tokens:
                     print("Dictionary is: ", counter)
                     print('---')
                     break
-#
+
+#get rid of words in the stopwords2 list
+for word in stopwords2:
+    if word in counter:
+        del counter[word]
+
+inflect = inflect.engine()
+
+#for food in counter:
+    #test if you can make the food singular, if it is already singular, will return false
+    #if inflect.singular_noun(food) is False:
+        #food = inflect.plural(food)
+        #print(food)
+
+pluralize_words = ["cocktail", "cookie", "strawberry", "raspberry", "grape", "cherry", "brownie", "tortilla", "sundae", "starburst", "peach", "oyster", "mushroom", "mashed potato", "jolly rancher", "hazelnut", "burrito", "banana"]
+
+for word in pluralize_words:
+    #if there is already a plural version of the word in the dictionary, get the value of the singular word and add it to the value of the plural word
+    if inflect.plural(word) in counter.keys():
+        counter[inflect.plural(word)] = counter[word] + counter[inflect.plural(word)]
+        del counter[word]
+    else:
+        counter[inflect.plural(word)] = counter.pop(word)
+
+counter["whipped cream"] = counter["whip cream"] + counter["whipped cream"]
+del counter["whip cream"]
+
+
+    #for food, count in counter.items():
+        #if food == word:
+            #counter[inflect.plural(word)] = counter.pop(food)
 
 print("List of all the foods in the dictionary are:")
 
@@ -168,5 +204,5 @@ table.sortby = "Percent"
 table.reversesort = True
 print(table)
 
-with open('data_broad_search.txt', 'w') as w:
+with open('taste_results_basic_2.txt', 'w') as w:
     w.write(str(table))
