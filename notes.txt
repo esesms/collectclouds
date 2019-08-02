@@ -1,0 +1,83 @@
+
+while syllables_remaining > 0:
+    #print(extras_dict[rand_extra])
+    #if random_key:
+    #    if extras_dict[random_key] <= 17:
+    #        print(random_key, extras_dict[random_key])
+    #    else:
+    #        random_key = random.choice(list(extras_dict.keys()))
+    #else:
+    #    random_key = random.choice(list(extras_dict.keys()))
+
+    try:
+        random_key
+    except NameError:
+        random_key = None
+
+   # while random_key is None or extras_dict[random_key] > 17:
+   #     random_key = random.choice(list(extras_dict.keys()))
+
+    if random_key is None:
+        print("No key yet, selecting random key")
+        random_key = random.choice(list(extras_dict.keys()))
+    else:
+        for key, value in extras_dict.items():
+            if value
+
+        if extras_dict[random_key] > syllables_remaining:
+            random_key = random.choice(list(extras_dict.keys()))
+            print("Skip")
+        if extras_dict[random_key] <= syllables_remaining:
+            print("Use: " + random_key, extras_dict[random_key])
+            syllables_remaining = syllables_remaining - extras_dict[random_key]
+            print("Remaining: " + str(syllables_remaining))
+            random_key = random.choice(list(extras_dict.keys()))
+
+        #print(str(syllables_remaining) + ": " + key, extras_dict[key])
+
+    """if random_key is None:
+    #while not random_key or extras_dict[random_key] > 17:
+        random_key = random.choice(list(extras_dict.keys()))
+        if extras_dict[random_key] > 17:
+            print("No use: " + random_key, extras_dict[random_key])
+        else:
+            print("Use: " + random_key, extras_dict[random_key])
+    else:
+        random_key = random.choice(list(extras_dict.keys()))
+        if extras_dict[random_key] > 17:
+            print("No use: " + random_key, extras_dict[random_key])
+        else:
+            print("Use: " + random_key, extras_dict[random_key])
+"""
+for key, value in questions_dict.items():
+    if dcount is rand:
+        if value <=5:
+            haiku_line1 = key
+            #print(key, value)
+        else:
+            print("Too many syllables")
+    dcount += 1
+
+#if "cloud" not in cloud_mods[rand_cloud_mod]:
+#    poem_pt1 = cloud_mods[rand_cloud_mod] + " clouds taste like"
+#else:
+#    poem_pt1 = cloud_mods[rand_cloud_mod] + " taste like"
+
+#poem_pt2 = taste_mods[rand_taste_mod] + " " + taste_nouns[rand_taste_noun] + ", " + taste_nouns[rand_taste_noun2]
+#print(poem_pt1 + " " + poem_pt2)
+
+count_cloud_mods = len(cloud_mods_dict)
+count_taste_mods = len(taste_mods_dict)
+count_taste_nouns = len(taste_nouns_dict)
+count_extras = len(extras_dict)
+count_questions = len(questions_dict)
+
+rand_cloud_mod = random.randrange(0, count_cloud_mods, 1)
+rand_taste_mod = random.randrange(0, count_taste_mods, 1)
+rand_taste_noun = random.randrange(0, count_taste_nouns, 1)
+rand_taste_noun2 = random.randrange(0, count_taste_nouns, 1)
+rand_extra = random.randrange(0, count_extras, 1)
+rand_question = random.randrange(0, count_questions, 1)
+
+
+syllables_remaining = haiku_syllables

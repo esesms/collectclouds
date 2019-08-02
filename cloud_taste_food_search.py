@@ -204,5 +204,5 @@ table.sortby = "Percent"
 table.reversesort = True
 print(table)
 
-with open('taste_results_basic_2.txt', 'w') as w:
+with open('taste_food_results_basic_2.txt', 'w') as w:
     w.write(str(table))
